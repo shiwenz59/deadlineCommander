@@ -1,0 +1,13 @@
+[
+    {
+      "title": "Complete Project Proposal",
+      "description": "Write and submit the Q1 project proposal",
+      "dueDate": "2025-02-15",
+      "completed": false
+    },
+    {
+      "title": "Team Meeting",
+      "dueDate": "2025-02-07",
+      "completed": false
+    }
+  ]
