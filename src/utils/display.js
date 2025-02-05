@@ -1,6 +1,7 @@
 function showHelp() {
     console.log(`Deadline Manager - Available Commands:
-    add         Add a new deadline
+    add         Add a new deadline (interactive)
+    add title date  Add a new deadline directly (e.g., add "Task A" "02-15")
     list        List all pending deadlines
     listall     List all deadlines (including completed)
     list1day    List tasks due within 1 day

@@ -18,7 +18,7 @@ import { showHelp } from './src/utils/display.js';
 async function handleCommand(cmd, args) {
     switch (cmd) {
         case 'add':
-            await add();
+            await add(args[0], args[1]);
             break;
         case 'list':
             await list();
