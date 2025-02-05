@@ -1,6 +1,5 @@
-const inquirer = require('inquirer');
-const { readTasks, writeTasks } = require('../utils/fileOps');
-const { displayTask } = require('../utils/display');
+import inquirer from 'inquirer';
+import { readTasks, writeTasks } from '../utils/fileOps.js';
 
 async function add() {
     const questions = [
@@ -20,8 +19,37 @@ async function add() {
             name: 'dueDate',
             message: 'When is it due? (YYYY-MM-DD):',
             validate: function(input) {
-                const date = new Date(input);
-                return !isNaN(date.getTime()) || 'Please enter a valid date in YYYY-MM-DD format';
+                // If the input contains 'XXXX', treat it as valid
+                if (input.includes('XXXX')) {
+                    return true;
+                }
+                
+                // For normal date inputs, validate and insert current year if year is missing
+                const currentYear = new Date().getFullYear();
+                let dateToValidate = input;
+                
+                // If the input is in MM-DD format, prepend the current year
+                if (/^\d{2}-\d{2}$/.test(input)) {
+                    dateToValidate = `${currentYear}-${input}`;
+                }
+                
+                const date = new Date(dateToValidate);
+                return !isNaN(date.getTime()) || 'Please enter a valid date in YYYY-MM-DD or MM-DD format';
+            },
+            filter: function(input) {
+                // If input contains 'XXXX', return as is
+                if (input.includes('XXXX')) {
+                    return input;
+                }
+                
+                // If input is in MM-DD format, add current year
+                if (/^\d{2}-\d{2}$/.test(input)) {
+                    const currentYear = new Date().getFullYear();
+                    return `${currentYear}-${input}`;
+                }
+                
+                // Return original input for fully specified dates
+                return input;
             }
         }
     ];
@@ -40,14 +68,13 @@ async function add() {
 
         tasks.push(newTask);
         await writeTasks(tasks);
-        console.log('\nTask added successfully!');
+        console.log('Task added successfully!');
         
         // Show the newly added task
-        console.log('\nNew Task Details:');
-        displayTask(newTask);
+        console.log('New Task Details:' + `[${newTask.dueDate}] ${newTask.title}`);
     } catch (error) {
         console.error('Error adding task:', error);
     }
 }
 
-module.exports = add;
+export default add;

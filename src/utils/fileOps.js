@@ -1,7 +1,11 @@
-const fs = require('fs').promises;
-const path = require('path');
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-const TASKS_FILE = path.join(__dirname, '../../tasks.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const TASKS_FILE = join(dirname(__dirname), '../tasks.json');
 
 // Read tasks from file
 async function readTasks() {
@@ -28,7 +32,4 @@ async function writeTasks(tasks) {
     }
 }
 
-module.exports = {
-    readTasks,
-    writeTasks
-};
+export { readTasks, writeTasks };

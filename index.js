@@ -1,8 +1,16 @@
 #!/usr/bin/env node
 
-const add = require('./src/commands/add');
-const { list, listAll } = require('./src/commands/list');
-const { showHelp } = require('./src/utils/display');
+import add from './src/commands/add.js';
+import { 
+    list, 
+    listAll, 
+    list1day, 
+    list3day, 
+    list1week, 
+    list2week, 
+    list1month 
+} from './src/commands/list.js';
+import { showHelp } from './src/utils/display.js';
 
 // Main function to handle commands
 async function handleCommand(cmd, args) {
@@ -15,6 +23,21 @@ async function handleCommand(cmd, args) {
             break;
         case 'listall':
             await listAll();
+            break;
+        case 'list1day':
+            await list1day();
+            break;
+        case 'list3day':
+            await list3day();
+            break;
+        case 'list1week':
+            await list1week();
+            break;
+        case 'list2week':
+            await list2week();
+            break;
+        case 'list1month':
+            await list1month();
             break;
         case 'help':
             showHelp();
