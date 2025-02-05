@@ -1,11 +1,5 @@
 [
   {
-    "title": "Complete Project Proposal",
-    "description": "Write and submit the Q1 project proposal",
-    "dueDate": "2025-02-15",
-    "completed": false
-  },
-  {
     "title": "Team Meeting",
     "dueDate": "2025-02-07",
     "completed": true
@@ -14,21 +8,16 @@
     "title": "AIT Quiz 5",
     "description": null,
     "dueDate": "2025-02-06",
-    "completed": false,
-    "createdAt": "2025-02-05T23:01:43.627Z"
-  },
-  {
-    "title": "AIT Assignment",
-    "description": null,
-    "dueDate": "2025-02-08",
-    "completed": false,
-    "createdAt": "2025-02-05T23:04:27.138Z"
+    "completed": true,
+    "createdAt": "2025-02-05T23:01:43.627Z",
+    "completedAt": "2025-02-05T23:22:49.878Z"
   },
   {
     "title": "A",
     "description": null,
     "dueDate": "2025-02-09",
-    "completed": false,
-    "createdAt": "2025-02-05T23:05:37.410Z"
+    "completed": true,
+    "createdAt": "2025-02-05T23:05:37.410Z",
+    "completedAt": "2025-02-05T23:21:39.715Z"
   }
 ]

@@ -1,6 +1,5 @@
 function showHelp() {
-    console.log(`
-Deadline Manager - Available Commands:
+    console.log(`Deadline Manager - Available Commands:
     add         Add a new deadline
     list        List all pending deadlines
     listall     List all deadlines (including completed)
@@ -9,8 +8,9 @@ Deadline Manager - Available Commands:
     list1week   List tasks due within 1 week
     list2week   List tasks due within 2 weeks
     list1month  List tasks due within 1 month
-    help        Show this help menu
-    `);
+    complete    Mark a task as completed
+    remove      Remove a task
+    help        Show this help menu`);
 }
 
 export { showHelp };

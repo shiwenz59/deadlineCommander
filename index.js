@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 import add from './src/commands/add.js';
+import complete from './src/commands/complete.js';
+import remove from './src/commands/remove.js';
 import { 
     list, 
     listAll, 
@@ -38,6 +40,12 @@ async function handleCommand(cmd, args) {
             break;
         case 'list1month':
             await list1month();
+            break;
+        case 'complete':
+            await complete(args[0]);
+            break;
+        case 'remove':
+            await remove(args[0]);
             break;
         case 'help':
             showHelp();
