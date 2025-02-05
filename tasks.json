@@ -1,16 +1,10 @@
 [
   {
-    "title": "Task",
+    "title": "Book Valentines Plan",
     "description": null,
-    "dueDate": "2025-02-09",
-    "completed": false,
-    "createdAt": "2025-02-05T23:44:20.989Z"
-  },
-  {
-    "title": "Task 100",
-    "description": null,
-    "dueDate": "2025-03-04",
-    "completed": false,
-    "createdAt": "2025-02-05T23:46:38.729Z"
+    "dueDate": "2025-02-06",
+    "completed": true,
+    "createdAt": "2025-02-05T23:48:29.097Z",
+    "completedAt": "2025-02-05T23:48:51.392Z"
   }
 ]

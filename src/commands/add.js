@@ -61,19 +61,23 @@ async function add(title = '', dueDate = '') {
             {
                 type: 'input',
                 name: 'title',
-                message: 'Task title?',
-                validate: input => input.trim().length > 0 || 'Title is required'
+                message: 'Task title? (Press Ctrl+C to cancel)',
+                validate: input => {
+                    if (input.trim().toLowerCase() === 'cancel') return true;
+                    return input.trim().length > 0 || 'Title is required';
+                }
             },
             {
                 type: 'input',
                 name: 'description',
-                message: 'Task description (optional):'
+                message: 'Task description (optional, press Ctrl+C to cancel):'
             },
             {
                 type: 'input',
                 name: 'dueDate',
-                message: 'Due on (YYYY-)MM-DD:',
+                message: 'Due on (YYYY-)MM-DD (Press Ctrl+C to cancel):',
                 validate: function(input) {
+                    if (input.trim().toLowerCase() === 'cancel') return true;
                     const { isValid } = processDate(input);
                     return isValid || 'Please enter a valid date in YYYY-MM-DD or MM-DD format';
                 },
@@ -85,6 +89,12 @@ async function add(title = '', dueDate = '') {
         ];
 
         const answers = await inquirer.prompt(questions);
+        
+        // Check if user wants to cancel
+        if (answers.title.trim().toLowerCase() === 'cancel') {
+            console.log('Operation cancelled.');
+            return;
+        }
         const tasks = await readTasks();
         
         const newTask = {
@@ -100,6 +110,10 @@ async function add(title = '', dueDate = '') {
         console.log('Task added successfully!');
         console.log('New Task Details:' + `[${newTask.dueDate}] ${newTask.title}`);
     } catch (error) {
+        if (error.name === 'ExitPromptError') {
+            console.log('Operation cancelled.');
+            return;
+        }
         console.error('Error adding task:', error);
     }
 }
