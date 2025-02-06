@@ -61,7 +61,7 @@ async function add(title = '', dueDate = '') {
             {
                 type: 'input',
                 name: 'title',
-                message: 'Task title? (Press Ctrl+C to cancel)',
+                message: 'Task title：',
                 validate: input => {
                     if (input.trim().toLowerCase() === 'cancel') return true;
                     return input.trim().length > 0 || 'Title is required';
@@ -70,12 +70,12 @@ async function add(title = '', dueDate = '') {
             {
                 type: 'input',
                 name: 'description',
-                message: 'Task description (optional, press Ctrl+C to cancel):'
+                message: 'Task description (optional）:'
             },
             {
                 type: 'input',
                 name: 'dueDate',
-                message: 'Due on (YYYY-)MM-DD (Press Ctrl+C to cancel):',
+                message: 'Due on (YYYY-)MM-DD:',
                 validate: function(input) {
                     if (input.trim().toLowerCase() === 'cancel') return true;
                     const { isValid } = processDate(input);
