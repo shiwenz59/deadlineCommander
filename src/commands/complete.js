@@ -76,20 +76,11 @@ async function complete(title = '') {
         const question = {
             type: 'list',
             name: 'taskIndex',
-            message: 'Select a task to mark as completed (Press Esc to cancel):',
-            choices: [
-                ...incompleteTasks.map((task, index) => formatTaskChoice(task, tasks.indexOf(task))),
-                { name: 'Cancel', value: 'cancel' }
-            ]
+            message: 'Select a task to mark as completed:',
+            choices: incompleteTasks.map((task, index) => formatTaskChoice(task, tasks.indexOf(task)))
         };
 
         const { taskIndex } = await inquirer.prompt(question);
-        
-        // Handle cancellation
-        if (taskIndex === 'cancel') {
-            console.log('Operation cancelled.');
-            return;
-        }
         
         // Mark the task as completed
         tasks[taskIndex].completed = true;
@@ -100,6 +91,10 @@ async function complete(title = '') {
         console.log('Task marked as completed:');
         console.log(`[DONE] [${tasks[taskIndex].dueDate}] ${tasks[taskIndex].title}`);
     } catch (error) {
+        if (error.name === 'ExitPromptError') {
+            console.log('Operation cancelled.');
+            return;
+        }
         console.error('Error completing task:', error);
     }
 }

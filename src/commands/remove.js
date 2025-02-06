@@ -43,20 +43,12 @@ async function remove(title = '') {
                 const { selectedIndex } = await inquirer.prompt({
                     type: 'list',
                     name: 'selectedIndex',
-                    message: 'Select which task to remove (Press Esc to cancel):',
-                    choices: [
-                        ...matchingTasks.map((task, idx) => ({
-                            name: `[${task.dueDate}] ${task.title}`,
-                            value: tasks.indexOf(task)
-                        })),
-                        { name: 'Cancel', value: 'cancel' }
-                    ]
+                    message: 'Select which task to remove:',
+                    choices: matchingTasks.map((task, idx) => ({
+                        name: `[${task.dueDate}] ${task.title}`,
+                        value: tasks.indexOf(task)
+                    }))
                 });
-
-                if (selectedIndex === 'cancel') {
-                    console.log('Operation cancelled.');
-                    return;
-                }
                 taskIndex = selectedIndex;
             } else {
                 taskIndex = tasks.indexOf(matchingTasks[0]);
@@ -91,20 +83,11 @@ async function remove(title = '') {
         const question = {
             type: 'list',
             name: 'taskIndex',
-            message: 'Select a task to remove (Press Esc to cancel):',
-            choices: [
-                ...tasks.map((task, index) => formatTaskChoice(task, index)),
-                { name: 'Cancel', value: 'cancel' }
-            ]
+            message: 'Select a task to remove:',
+            choices: tasks.map((task, index) => formatTaskChoice(task, index))
         };
 
         const { taskIndex } = await inquirer.prompt(question);
-
-        // Handle cancellation
-        if (taskIndex === 'cancel') {
-            console.log('Operation cancelled.');
-            return;
-        }
 
         // Confirm before removing
         const { confirm } = await inquirer.prompt({
@@ -129,6 +112,10 @@ async function remove(title = '') {
         console.log('Task removed successfully:');
         console.log(`[${removedTask.dueDate}] ${removedTask.title}`);
     } catch (error) {
+        if (error.name === 'ExitPromptError') {
+            console.log('Operation cancelled.');
+            return;
+        }
         console.error('Error removing task:', error);
     }
 }
