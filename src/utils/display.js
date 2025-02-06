@@ -3,13 +3,13 @@ function showHelp() {
 Deadline Manager - Command Usage Guide
 
 Basic Commands:
-  add                     Start interactive mode to add a new task
-  add "title" "date"      Add task directly (e.g., add "Math HW" "02-15")
+  add                    Start interactive mode to add a new task
+  add "title" "date"     Add task directly (e.g., add "Math HW" "02-15")
                          Date format: MM-DD or YYYY-MM-DD
 
 List Commands:
-  list                    Show all pending tasks
-  listall                 Show all tasks (including completed)
+  list                   Show all pending tasks
+  listall                Show all tasks (including completed)
   list1day               Show pending tasks due within 24 hours
   list3day               Show pending tasks due within 3 days
   list1week              Show pending tasks due within 1 week
