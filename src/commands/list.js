@@ -7,26 +7,40 @@ function sortByDueDate(tasks) {
 
 // Helper function to format a single task
 function formatTask(task) {
+    // Get today's date as YYYY-MM-DD
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set to start of day
+    const todayStr = today.toISOString().split('T')[0];
+    const todayDate = new Date(todayStr);
+    const taskDate = new Date(task.dueDate);
+    
     if (task.completed) {
         return `[DONE, ${task.dueDate}] ${task.title}`;
+    }
+    if (taskDate < todayDate) {
+        return `[OVERDUE, ${task.dueDate}] ${task.title}`;
     }
     return `[${task.dueDate}] ${task.title}`;
 }
 
 // Helper function to filter tasks by date range
 function filterTasksByDateRange(tasks, daysAhead) {
-    const now = new Date();
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
+    
+    // Calculate future date
     const futureDate = new Date();
-    futureDate.setDate(now.getDate() + daysAhead);
+    futureDate.setDate(futureDate.getDate() + daysAhead);
+    const futureDateStr = futureDate.toISOString().split('T')[0];
     
     return tasks.filter(task => {
-        // Skip tasks with placeholder dates (containing 'XXXX')
+        // Skip tasks with placeholder dates
         if (task.dueDate.includes('XXXX')) {
             return false;
         }
         
-        const dueDate = new Date(task.dueDate);
-        return dueDate >= now && dueDate <= futureDate;
+        // Include overdue tasks (before today) OR tasks within the future range
+        return task.dueDate < todayStr || (task.dueDate >= todayStr && task.dueDate <= futureDateStr);
     });
 }
 
