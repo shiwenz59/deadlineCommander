@@ -51,7 +51,7 @@ async function add(title = '', dueDate = '') {
             tasks.push(newTask);
             await writeTasks(tasks);
             console.log('Task added successfully!');
-            console.log('New Task Details:' + `[${newTask.dueDate}] ${newTask.title}`);
+            console.log(`New Task Details: [${newTask.dueDate}] ${newTask.title}`);
             return;
         }
 
@@ -101,7 +101,7 @@ async function add(title = '', dueDate = '') {
         tasks.push(newTask);
         await writeTasks(tasks);
         console.log('Task added successfully!');
-        console.log('New Task Details:' + `[${newTask.dueDate}] ${newTask.title}`);
+        console.log(`New Task Details: [${newTask.dueDate}] ${newTask.title}`);
     } catch (error) {
         if (error.name === 'ExitPromptError') {
             console.log('Operation cancelled.');
