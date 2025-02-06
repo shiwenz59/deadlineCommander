@@ -43,7 +43,6 @@ async function add(title = '', dueDate = '') {
             const tasks = await readTasks();
             const newTask = {
                 title: title.trim(),
-                description: null,
                 dueDate: date,
                 completed: false,
                 createdAt: new Date().toISOString()
@@ -66,11 +65,6 @@ async function add(title = '', dueDate = '') {
                     if (input.trim().toLowerCase() === 'cancel') return true;
                     return input.trim().length > 0 || 'Title is required';
                 }
-            },
-            {
-                type: 'input',
-                name: 'description',
-                message: 'Task description (optional）:'
             },
             {
                 type: 'input',
@@ -99,7 +93,6 @@ async function add(title = '', dueDate = '') {
         
         const newTask = {
             title: answers.title.trim(),
-            description: answers.description.trim() || null,
             dueDate: answers.dueDate,
             completed: false,
             createdAt: new Date().toISOString()

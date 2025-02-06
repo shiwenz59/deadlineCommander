@@ -3,9 +3,8 @@ import { readTasks, writeTasks } from '../utils/fileOps.js';
 
 // Helper function to format task for selection
 function formatTaskChoice(task, index) {
-    const status = task.completed ? '[DONE]' : '[PENDING]';
     return {
-        name: `${status} [${task.dueDate}] ${task.title}`,
+        name: `[${task.dueDate}] ${task.title}`,
         value: index
     };
 }

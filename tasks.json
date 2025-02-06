@@ -1,23 +1,39 @@
 [
   {
-    "title": "call gf",
-    "description": null,
+    "title": "AIT Assignment 2",
+    "dueDate": "2025-02-10",
+    "completed": false,
+    "createdAt": "2025-02-06T02:47:32.215Z"
+  },
+  {
+    "title": "DMA Assignment 2",
+    "dueDate": "2025-02-09",
+    "completed": true,
+    "createdAt": "2025-02-06T02:47:47.154Z",
+    "completedAt": "2025-02-06T04:26:49.840Z"
+  },
+  {
+    "title": "AIT In-Class Quiz",
+    "dueDate": "2025-02-11",
+    "completed": false,
+    "createdAt": "2025-02-06T02:48:05.840Z"
+  },
+  {
+    "title": "RNYC Readings",
     "dueDate": "2025-02-05",
     "completed": false,
-    "createdAt": "2025-02-05T23:58:42.011Z"
+    "createdAt": "2025-02-06T02:48:40.320Z"
   },
   {
-    "title": "CS Quiz",
-    "description": "02-14",
-    "dueDate": "2025-02-14",
+    "title": "DMA In-Class Quiz",
+    "dueDate": "2025-02-10",
     "completed": false,
-    "createdAt": "2025-02-05T23:59:13.004Z"
+    "createdAt": "2025-02-06T04:30:07.900Z"
   },
   {
-    "title": "Old Task",
-    "description": "01-09",
-    "dueDate": "2025-01-09",
+    "title": "DMA Notes",
+    "dueDate": "2025-02-04",
     "completed": false,
-    "createdAt": "2025-02-06T00:17:42.964Z"
+    "createdAt": "2025-02-06T04:32:50.607Z"
   }
 ]
