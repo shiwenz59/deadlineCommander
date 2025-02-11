@@ -3,6 +3,16 @@ import { readTasks, writeTasks } from '../utils/fileOps.js';
 
 // Helper function to validate and format date
 function processDate(input) {
+    // Check if the format strictly follows the pattern with hyphens
+    const datePattern = /^(\d{4}-\d{2}-\d{2}|\d{2}-\d{2})$/;
+    if (!datePattern.test(input) && !input.includes('XXXX')) {
+        return { 
+            isValid: false, 
+            date: null, 
+            error: 'Please enter the date in YYYY-MM-DD or MM-DD format using hyphens' 
+        };
+    }
+
     // If the input contains 'XXXX', treat it as valid
     if (input.includes('XXXX')) {
         return { isValid: true, date: input };
@@ -19,7 +29,11 @@ function processDate(input) {
     
     const date = new Date(dateToValidate);
     if (isNaN(date.getTime())) {
-        return { isValid: false, date: null };
+        return { 
+            isValid: false, 
+            date: null, 
+            error: 'Please enter a valid date' 
+        };
     }
 
     // Return processed date
@@ -34,9 +48,9 @@ async function add(title = '', dueDate = '') {
         // If title and date are provided, use direct mode
         if (title && dueDate) {
             // Validate date
-            const { isValid, date } = processDate(dueDate);
+            const { isValid, date, error } = processDate(dueDate);
             if (!isValid) {
-                console.log('Error: Please enter a valid date in YYYY-MM-DD or MM-DD format');
+                console.log(`Error: ${error}`);
                 return;
             }
 
@@ -72,8 +86,8 @@ async function add(title = '', dueDate = '') {
                 message: 'Due on (YYYY-)MM-DD:',
                 validate: function(input) {
                     if (input.trim().toLowerCase() === 'cancel') return true;
-                    const { isValid } = processDate(input);
-                    return isValid || 'Please enter a valid date in YYYY-MM-DD or MM-DD format';
+                    const { isValid, error } = processDate(input);
+                    return isValid || error;
                 },
                 filter: function(input) {
                     const { date } = processDate(input);

@@ -1,6 +1,6 @@
 function showHelp() {
     console.log(`
-Deadline Manager - Command Usage Guide
+Deadline Commander - Command Usage Guide
 
 Basic Commands:
   add                    Start interactive mode to add a new task
@@ -35,7 +35,7 @@ Examples:
 Notes:
 - Dates can be in MM-DD format (uses current year) or YYYY-MM-DD
 - Title searches are case-insensitive and match partial text
-- All interactive modes can be cancelled with Esc key
+- All interactive modes can be cancelled with 'Cmd+C' key
 - Overdue tasks are included in all time-range listings`);
 }
 

@@ -2,8 +2,9 @@
   {
     "title": "AIT Assignment 2",
     "dueDate": "2025-02-10",
-    "completed": false,
-    "createdAt": "2025-02-06T02:47:32.215Z"
+    "completed": true,
+    "createdAt": "2025-02-06T02:47:32.215Z",
+    "completedAt": "2025-02-09T15:39:44.681Z"
   },
   {
     "title": "DMA Assignment 2",
@@ -15,20 +16,23 @@
   {
     "title": "AIT In-Class Quiz",
     "dueDate": "2025-02-11",
-    "completed": false,
-    "createdAt": "2025-02-06T02:48:05.840Z"
+    "completed": true,
+    "createdAt": "2025-02-06T02:48:05.840Z",
+    "completedAt": "2025-02-11T16:06:51.617Z"
   },
   {
     "title": "RNYC Readings",
     "dueDate": "2025-02-05",
-    "completed": false,
-    "createdAt": "2025-02-06T02:48:40.320Z"
+    "completed": true,
+    "createdAt": "2025-02-06T02:48:40.320Z",
+    "completedAt": "2025-02-07T01:54:25.139Z"
   },
   {
     "title": "DMA In-Class Quiz",
     "dueDate": "2025-02-10",
-    "completed": false,
-    "createdAt": "2025-02-06T04:30:07.900Z"
+    "completed": true,
+    "createdAt": "2025-02-06T04:30:07.900Z",
+    "completedAt": "2025-02-11T13:32:55.447Z"
   },
   {
     "title": "DMA Notes",
@@ -38,9 +42,46 @@
     "completedAt": "2025-02-06T04:38:34.658Z"
   },
   {
-    "title": "Listen to Naop Yap about Architecture",
-    "dueDate": "2025-02-06",
+    "title": "FAS Event",
+    "dueDate": "2025-02-11",
+    "completed": true,
+    "createdAt": "2025-02-10T23:23:53.193Z",
+    "completedAt": "2025-02-11T13:32:45.359Z"
+  },
+  {
+    "title": "Prepare OH Question",
+    "dueDate": "2025-02-11",
     "completed": false,
-    "createdAt": "2025-02-06T04:52:28.161Z"
+    "createdAt": "2025-02-11T14:01:34.932Z"
+  },
+  {
+    "title": "MM Research Topic",
+    "dueDate": "2025-02-11",
+    "completed": false,
+    "createdAt": "2025-02-11T14:02:23.758Z"
+  },
+  {
+    "title": "DMA Assignment 3",
+    "dueDate": "2025-02-17",
+    "completed": false,
+    "createdAt": "2025-02-11T16:10:38.658Z"
+  },
+  {
+    "title": "AIT Homework 3",
+    "dueDate": "2025-02-19",
+    "completed": false,
+    "createdAt": "2025-02-11T16:11:57.326Z"
+  },
+  {
+    "title": "Verum MVP",
+    "dueDate": "2025-02-11",
+    "completed": false,
+    "createdAt": "2025-02-11T16:12:21.786Z"
+  },
+  {
+    "title": "ASD Javascript Quiz",
+    "dueDate": "2025-02-12",
+    "completed": false,
+    "createdAt": "2025-02-11T16:14:16.133Z"
   }
 ]
