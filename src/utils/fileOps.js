@@ -6,7 +6,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const TASKS_FILE = join(dirname(__dirname), '../tasks.json');
-const TEMPLATE_FILE = join(dirname(__dirname), '../tasks.template.json');
 
 // Read tasks from file
 async function readTasks() {
@@ -15,16 +14,9 @@ async function readTasks() {
         return JSON.parse(data);
     } catch (error) {
         if (error.code === 'ENOENT') {
-            // If tasks.json doesn't exist, copy from template
-            try {
-                const templateData = await fs.readFile(TEMPLATE_FILE, 'utf8');
-                await fs.writeFile(TASKS_FILE, templateData);
-                return JSON.parse(templateData);
-            } catch (templateError) {
-                // If template doesn't exist either, create empty array
-                await fs.writeFile(TASKS_FILE, JSON.stringify([], null, 2));
-                return [];
-            }
+            // If file doesn't exist, create empty array
+            await fs.writeFile(TASKS_FILE, JSON.stringify([], null, 2));
+            return [];
         }
         console.error('Error reading tasks:', error);
         return [];

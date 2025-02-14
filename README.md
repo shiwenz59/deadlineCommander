@@ -19,17 +19,12 @@ A command-line interface (CLI) tool for managing tasks and deadlines efficiently
    cd deadline-commander
    ```
 
-2. Set up your tasks file:
-   ```bash
-   cp tasks.template.json tasks.json
-   ```
-
-3. Install dependencies:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-4. Link the package globally (to use `deadline` command from anywhere):
+3. Link the package globally (to use `deadline` command from anywhere):
    ```bash
    npm link
    ```
