@@ -25,13 +25,6 @@ Task Management:
 Help:
   help                   Show this help menu
 
-Examples:
-  $ deadline add "Read Chapter 5" "2025-02-20"
-  $ deadline add "Submit Report" "02-15"
-  $ deadline complete "Read"
-  $ deadline list1week
-  $ deadline remove "Report"
-
 Notes:
 - Dates can be in MM-DD format (uses current year) or YYYY-MM-DD
 - Title searches are case-insensitive and match partial text

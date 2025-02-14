@@ -1,6 +1,7 @@
 {
   "name": "deadlinemanager",
   "version": "1.0.0",
+  "description": "A command-line interface (CLI) tool for managing tasks and deadlines efficiently.",
   "type": "module",
   "main": "index.js",
   "bin": {
@@ -9,10 +10,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": [
+    "cli",
+    "task-management",
+    "deadline",
+    "todo",
+    "productivity"
+  ],
+  "author": "shiwenz59",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiwenz59/deadlineCommander.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shiwenz59/deadlineCommander/issues"
+  },
+  "homepage": "https://github.com/shiwenz59/deadlineCommander#readme",
+  "license": "MIT",
   "dependencies": {
     "inquirer": "^12.4.1"
   }

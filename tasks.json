@@ -51,14 +51,16 @@
   {
     "title": "Prepare OH Question",
     "dueDate": "2025-02-11",
-    "completed": false,
-    "createdAt": "2025-02-11T14:01:34.932Z"
+    "completed": true,
+    "createdAt": "2025-02-11T14:01:34.932Z",
+    "completedAt": "2025-02-12T18:46:24.649Z"
   },
   {
     "title": "MM Research Topic",
     "dueDate": "2025-02-11",
-    "completed": false,
-    "createdAt": "2025-02-11T14:02:23.758Z"
+    "completed": true,
+    "createdAt": "2025-02-11T14:02:23.758Z",
+    "completedAt": "2025-02-14T02:59:23.440Z"
   },
   {
     "title": "DMA Assignment 3",
@@ -75,13 +77,46 @@
   {
     "title": "Verum MVP",
     "dueDate": "2025-02-11",
-    "completed": false,
-    "createdAt": "2025-02-11T16:12:21.786Z"
+    "completed": true,
+    "createdAt": "2025-02-11T16:12:21.786Z",
+    "completedAt": "2025-02-12T18:46:39.834Z"
   },
   {
     "title": "ASD Javascript Quiz",
     "dueDate": "2025-02-12",
+    "completed": true,
+    "createdAt": "2025-02-11T16:14:16.133Z",
+    "completedAt": "2025-02-12T18:47:28.724Z"
+  },
+  {
+    "title": "RNYC Reading",
+    "dueDate": "2025-02-12",
+    "completed": true,
+    "createdAt": "2025-02-12T18:48:08.552Z",
+    "completedAt": "2025-02-14T02:58:47.090Z"
+  },
+  {
+    "title": "DMA Quiz Review",
+    "dueDate": "2025-02-15",
     "completed": false,
-    "createdAt": "2025-02-11T16:14:16.133Z"
+    "createdAt": "2025-02-12T20:48:11.012Z"
+  },
+  {
+    "title": "AIT Note Study",
+    "dueDate": "2025-02-17",
+    "completed": false,
+    "createdAt": "2025-02-12T20:50:39.432Z"
+  },
+  {
+    "title": "ASD Exercise",
+    "dueDate": "2025-02-19",
+    "completed": false,
+    "createdAt": "2025-02-12T21:06:57.491Z"
+  },
+  {
+    "title": "RNYC Critical Response",
+    "dueDate": "2025-02-20",
+    "completed": false,
+    "createdAt": "2025-02-13T18:30:23.149Z"
   }
 ]
