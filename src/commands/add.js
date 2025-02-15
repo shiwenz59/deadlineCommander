@@ -64,7 +64,7 @@ async function add(title = '', dueDate = '') {
 
             tasks.push(newTask);
             await writeTasks(tasks);
-            console.log('Task added successfully!');
+            process.stdout.write('Task added successfully!\n');
             console.log(`New Task Details: [${newTask.dueDate}] ${newTask.title}`);
             return;
         }
@@ -114,7 +114,7 @@ async function add(title = '', dueDate = '') {
 
         tasks.push(newTask);
         await writeTasks(tasks);
-        console.log('Task added successfully!');
+        process.stdout.write('Task added successfully!\n');
         console.log(`New Task Details: [${newTask.dueDate}] ${newTask.title}`);
     } catch (error) {
         if (error.name === 'ExitPromptError') {
